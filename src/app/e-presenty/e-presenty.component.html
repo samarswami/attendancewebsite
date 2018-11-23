@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" 
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="/home">Home</a>
+      <a mat-list-item href="/dashboard" *ngIf="isLoggedIn">Dashboard</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="warn">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+        <span class="title" (click)="redirect('home')">ePresenty</span>
+      <span class="example-fill-remaining-space"></span>
+      <span>
+          <button mat-button (click)="redirect('login')" *ngIf="isLoggedIn">Login</button>
+          <button mat-button (click)="redirect('about')">About Us</button>
+          <button mat-button (click)="redirect('contact')">Contact</button>
+      </span>
+      <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item *ngIf="!isLoggedIn">Log Out</button>
+        </mat-menu>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
