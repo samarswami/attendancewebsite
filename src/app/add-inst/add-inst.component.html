@@ -1,0 +1,82 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Institute</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Institute Name"
+                [(ngModel)]="instename"
+                name="instname"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Institute Address"
+                [(ngModel)]="instaddr"
+                name="instaddr"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="SPOC Name"
+                [(ngModel)]="spocname"
+                name="spocname"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="SPOC Contact"
+                [(ngModel)]="spoccontact"
+                name="spoccontact"
+                type="number"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Institute Contact"
+                [(ngModel)]="instcontact"
+                name="instcontact"
+                type="number"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" color="primary">Submit</button>
+  </mat-card-actions>
+</mat-card>
