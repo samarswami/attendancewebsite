@@ -6,6 +6,8 @@ import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddInstComponent } from './add-inst/add-inst.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AddbradminComponent } from './addbradmin/addbradmin.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,12 +16,16 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'addinst', component: AddInstComponent }
+  { path: 'addinst', component: AddInstComponent },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'addbradmin', component: AddbradminComponent },
+
+  
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{ useHash: true,onSameUrlNavigation: 'reload' })
   ],
   exports: [
     RouterModule

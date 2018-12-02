@@ -11,7 +11,7 @@
               <input
                 matInput
                 placeholder="Institute Name"
-                [(ngModel)]="instename"
+                [(ngModel)]="instname"
                 name="instname"
                 required
               />
@@ -77,6 +77,6 @@
     <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Submit</button>
+    <button mat-raised-button (click)="addInst(instname,instaddr,spocname,spoccontact,instcontact)" color="primary">Submit</button>
   </mat-card-actions>
 </mat-card>

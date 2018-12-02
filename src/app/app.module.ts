@@ -26,6 +26,11 @@ import { AuthguardsComponent } from "./authguards/authguards.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AddInstComponent } from "./add-inst/add-inst.component";
 import { HttpClientModule } from "@angular/common/http";
+import { LogoutComponent } from './logout/logout.component';
+import { AddbradminComponent } from './addbradmin/addbradmin.component';
+import {MatSelectModule} from '@angular/material/select'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,10 +41,13 @@ import { HttpClientModule } from "@angular/common/http";
     AboutComponent,
     DashboardComponent,
     AuthguardsComponent,
-    AddInstComponent
+    AddInstComponent,
+    LogoutComponent,
+    AddbradminComponent
   ],
   imports: [
     AppRoutingModule,
+    MatProgressBarModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -54,9 +62,10 @@ import { HttpClientModule } from "@angular/common/http";
     MatMenuModule,
     FormsModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

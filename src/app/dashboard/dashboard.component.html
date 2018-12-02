@@ -3,10 +3,8 @@
   <mat-grid-list [cols]="(isHandset$ | async) ? '1' : '3'" rowHeight="120px">
     <mat-grid-tile
       *ngFor="let card of (cards | async)"
-      [colspan]="card.cols"
-      [rowspan]="card.rows"
     >
-      <mat-card class="dashboard-card" (click)="redirect(card.name)">
+      <mat-card class="dashboard-card" (click)="redirect(card.name)" >
         <mat-card-header>
           <mat-card-title>
             <!--

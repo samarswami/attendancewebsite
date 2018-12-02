@@ -1,6 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
+export class AuthData {
+  statusCode: number;
+  name: string;
+  role: string;
+}
 
 @Component({
   selector: "app-login",
@@ -8,12 +13,38 @@ import { AuthService } from "../auth.service";
   styleUrls: ["./login.component.css"]
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private auth: AuthService) {}
+  auData: AuthData;
+  showSpinner= false; 
+  isCorrectUser = false; 
+  constructor(private router: Router, private auth: AuthService) {
+    
+  }
+  ngOnInit() {
+    localStorage.setItem('isLoggedIn', 'false');
+    
+  }
+  login(uname, password): void {
+    this.showSpinner= true;
+    console.log(uname+ password);
+    
+    this.auth.getAuth(uname, password).subscribe(data => {
+      this.auData= data
+      if(this.auData.statusCode==200)
+      {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('role', this.auData.role);
 
-  ngOnInit() {}
-  login(): void {
-    this.auth.getAuth().subscribe(data => {
-      console.log(data);
+        this.router.navigate(['./dashboard']);
+    this.showSpinner= false;
+
+      }
+      else{
+        this.isCorrectUser= true;
+    this.showSpinner= false;
+
+      }
+      console.log(this.auData);
+      
     });
   }
 }

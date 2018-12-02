@@ -1,0 +1,85 @@
+<mat-progress-bar mode="indeterminate"[style.display]="showSpinner ? 'block' : 'none'"></mat-progress-bar>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Branch Admin</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #loginForm="ngForm">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-select placeholder="Institute" #instselect>
+                <mat-option *ngFor="let inst of insts" [value]="inst.InstID.S" >
+                  {{inst.instName.S}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Branch Name"
+                [(ngModel)]="brname"
+                name="brname"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Branch Admin Name"
+                [(ngModel)]="bradmnname"
+                name="bradmnname"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Branch Admin Email"
+                [(ngModel)]="bradmnemail"
+                name="bradmnemail"
+                type="email"
+                required
+                email
+              />
+              <mat-hint>Password will be sent to  this email</mat-hint>
+            </mat-form-field>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input
+                matInput
+                placeholder="Branch Admin Contact"
+                [(ngModel)]="bradmncontach"
+                name="instcontact"
+                type="number"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="addBrch(instselect._value,brname,bradmnname,bradmnemail,bradmncontach)" 
+    [disabled]="!loginForm.form.valid" color="primary">Submit</button>
+  </mat-card-actions>
+</mat-card>

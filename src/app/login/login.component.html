@@ -1,16 +1,17 @@
 <div layout-fill layout="column" layout-align="center none">
   <div layout="row" layout-align="center none">
+<mat-progress-bar mode="indeterminate"[style.display]="showSpinner ? 'block' : 'none'"></mat-progress-bar>
     <mat-card>
       <mat-card-header>
         <mat-card-title>Login</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <form>
+        <form #loginForm="ngForm" (keyup.enter)="loginForm.form.valid? login(username, password): null">
           <table cellspacing="0">
             <tr>
               <td>
                 <mat-form-field>
-                  <input
+                  <input 
                     matInput
                     placeholder="Username"
                     [(ngModel)]="username"
@@ -34,14 +35,19 @@
                 </mat-form-field>
               </td>
             </tr>
+            <tr>
+              <td>
+                <mat-label *ngIf="isCorrectUser">Username or password incorrect!</mat-label>
+            </td>
+            </tr>
           </table>
         </form>
-        <mat-spinner
+        <!-- <mat-spinner
           [style.display]="showSpinner ? 'block' : 'none'"
-        ></mat-spinner>
+        ></mat-spinner> -->
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button (click)="login()" color="primary">
+        <button mat-raised-button (click)="login(username, password)" [disabled]="!loginForm.form.valid" color="primary">
           Login
         </button>
       </mat-card-actions>
