@@ -34,15 +34,15 @@ export class DashboardComponent {
         { title: "Add Institute", name: "addinst"},
         { title: "Add Branch Admin", name: "addbradmin", cols: 1, rows: 1 },
         { title: "Add Lecturer", name: "addlecturer", cols: 1, rows: 1 },
-        { title: "Add Subject", cols: 1, rows: 1 },
+        { title: "Add Subject", name: "addsubject", cols: 1, rows: 1 },
         { title: "Assign Subject to Lecturer", cols: 1, rows: 1 },
         { title: "Add Leave", cols: 1, rows: 1 },
         { title: "Reassign Lecture", cols: 1, rows: 1 },
         { title: "Add Timetable", cols: 1, rows: 1 },
         { title: "Add Attendance", cols: 1, rows: 1 },
         { title: "Report", cols: 1, rows: 1 },
-        { title: "Add Batch", cols: 1, rows: 1 },
-        { title: "Add Students", cols: 1, rows: 1 },
+        { title: "Add Batch", name: "addbatch", cols: 1, rows: 1 },
+        { title: "Add Students", name: "addstudent", cols: 1, rows: 1 },
         { title: "Common View Timetable", cols: 1, rows: 1 }
       ];
     }

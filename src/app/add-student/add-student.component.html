@@ -1,0 +1,80 @@
+<mat-progress-bar mode="indeterminate" [style.display]="showSpinner ? 'block' : 'none'"></mat-progress-bar>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Add Student</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form #loginForm="ngForm">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-select placeholder="Institute" #instselect>
+                <mat-option *ngFor="let inst of insts" [value]="inst.InstID.S">
+                  {{inst.instName.S}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-select placeholder="Branch" #instselect>
+                <mat-option *ngFor="let Branch of Branches" [value]="brname">
+                  {{Branch.brname.S}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="First Name" [(ngModel)]="lecturerFirstName" name="lecturerFirstName" required />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Middle Name" [(ngModel)]="lecturerMiddleName" name="lecturerMiddleName" required />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Last Name" [(ngModel)]="lecturerLastName" name="lecturerLastName"
+                required />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Date of Birth" [(ngModel)]="lecturerDOB" name="lecturerDOB" type="date"
+                required />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-select placeholder="Batch" #instselect>
+                <mat-option *ngFor="let inst of insts" [value]="inst.InstID.S">
+                  {{inst.instName.S}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner> -->
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="addBrch(instselect._value,brname,bradmnname,bradmnemail,bradmncontach)"
+      [disabled]="!loginForm.form.valid" color="primary">Submit</button>
+  </mat-card-actions>
+</mat-card>
