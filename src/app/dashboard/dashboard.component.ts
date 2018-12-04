@@ -33,7 +33,7 @@ export class DashboardComponent {
       return [
         { title: "Add Institute", name: "addinst"},
         { title: "Add Branch Admin", name: "addbradmin", cols: 1, rows: 1 },
-        { title: "Add Lecturer", cols: 1, rows: 1 },
+        { title: "Add Lecturer", name: "addlecturer", cols: 1, rows: 1 },
         { title: "Add Subject", cols: 1, rows: 1 },
         { title: "Assign Subject to Lecturer", cols: 1, rows: 1 },
         { title: "Add Leave", cols: 1, rows: 1 },

@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddInstComponent } from './add-inst/add-inst.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddbradminComponent } from './addbradmin/addbradmin.component';
+import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,13 +20,12 @@ const routes: Routes = [
   { path: 'addinst', component: AddInstComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'addbradmin', component: AddbradminComponent },
-
-  
+  { path: 'addlecturer', component: AddLecturerComponent },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes,{ useHash: true,onSameUrlNavigation: 'reload' })
+    RouterModule.forRoot(routes, { useHash: true, onSameUrlNavigation: 'reload' })
   ],
   exports: [
     RouterModule

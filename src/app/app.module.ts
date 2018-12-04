@@ -31,6 +31,7 @@ import { AddbradminComponent } from './addbradmin/addbradmin.component';
 import {MatSelectModule} from '@angular/material/select'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     AuthguardsComponent,
     AddInstComponent,
     LogoutComponent,
-    AddbradminComponent
+    AddbradminComponent,
+    AddLecturerComponent
   ],
   imports: [
     AppRoutingModule,
