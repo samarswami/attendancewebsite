@@ -8,7 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AddInstComponent } from './add-inst/add-inst.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AddbradminComponent } from './addbradmin/addbradmin.component';
-// import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
+import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'addinst', component: AddInstComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'addbradmin', component: AddbradminComponent },
-  // { path: 'addlecturer', component: AddLecturerComponent },
+  { path: 'addlecturer', component: AddLecturerComponent },
   { path: 'addstudent', component: AddStudentComponent },
   { path: 'addsubject', component: AddSubjectComponent },
   { path: 'addbatch', component: AddBatchComponent },

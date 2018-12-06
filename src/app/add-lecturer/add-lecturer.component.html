@@ -20,9 +20,9 @@
         <tr>
           <td>
             <mat-form-field>
-              <mat-select placeholder="Branch" #instselect>
-                <mat-option *ngFor="let Branch of Branches" [value]="brname">
-                  {{Branch.brname.S}}
+              <mat-select placeholder="Branch" #brselct>
+                <mat-option *ngFor="let Branch of branches" [value]="Branch.BranchID.B">
+                  {{br.brname.S}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

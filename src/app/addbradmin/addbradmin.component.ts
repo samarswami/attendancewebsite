@@ -6,11 +6,11 @@ export interface Food {
   value: string;
   viewValue: string;
 }
-export interface instDetails{
+export interface instDetails {
   instName: stringClass;
   InstID: stringClass
 }
-export interface stringClass{
+export interface stringClass {
   S: string
 }
 @Component({
@@ -20,38 +20,37 @@ export interface stringClass{
 })
 
 export class AddbradminComponent implements OnInit {
-  showSpinner= true;
-  insts:instDetails[];
-  constructor(private router: Router,private auth: AuthService) { }
+  showSpinner = true;
+  insts: instDetails[];
+  constructor(private router: Router, private auth: AuthService) { }
   auData: AuthData;
   ngOnInit() {
     console.log(localStorage.getItem('isLoggedIn'));
-    if(localStorage.getItem('isLoggedIn')== 'false'|| localStorage.getItem('isLoggedIn')== null){
-      this.router.navigate(["./login" ]);
+    if (localStorage.getItem('isLoggedIn') == 'false' || localStorage.getItem('isLoggedIn') == null) {
+      this.router.navigate(["./login"]);
     }
     this.auth.getInstDetails().subscribe(data => {
       console.log(data);
-      this.insts= data;
-      this.showSpinner= false;
+      this.insts = data;
+      this.showSpinner = false;
     });
   }
-  
-  addBrch(inst,brname,bradmnname,bradmnemail,bradmncontach): void {
-    this.showSpinner= true;
-    this.auth.addBrch(inst,brname,bradmnname,bradmnemail,bradmncontach).subscribe(data => {
-      this.auData= data
-      if(this.auData.statusCode==200)
-      {
-    this.showSpinner= false;
-    alert("Branch added successfully.")
+
+  addBrch(inst, brname, bradmnname, bradmnemail, bradmncontach): void {
+    this.showSpinner = true;
+    this.auth.addBrch(inst, brname, bradmnname, bradmnemail, bradmncontach).subscribe(data => {
+      this.auData = data
+      if (this.auData.statusCode == 200) {
+        this.showSpinner = false;
+        alert("Branch added successfully.")
       }
-      else{
-    this.showSpinner= false;
-    alert("Error Occurred!")
+      else {
+        this.showSpinner = false;
+        alert("Error Occurred!")
 
       }
       console.log(this.auData);
-      
+
     });
   }
 }

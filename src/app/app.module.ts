@@ -31,7 +31,7 @@ import { AddbradminComponent } from './addbradmin/addbradmin.component';
 import {MatSelectModule} from '@angular/material/select'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-// import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
+import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
@@ -48,7 +48,7 @@ import { AddBatchComponent } from './add-batch/add-batch.component';
     AddInstComponent,
     LogoutComponent,
     AddbradminComponent,
-    // AddLecturerComponent,
+    AddLecturerComponent,
     AddStudentComponent,
     AddSubjectComponent,
     AddBatchComponent
