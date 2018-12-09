@@ -14,7 +14,8 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatMenuModule
+  MatMenuModule,
+  MatSortModule
 } from "@angular/material";
 import { ContactComponent } from "./contact/contact.component";
 import { AboutComponent } from "./about/about.component";
@@ -36,7 +37,15 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
 import { Auth0serviceService } from "./auth0service.service";
-import { FlxUiDatatableModule,FlxUiDataTable } from 'flx-ui-datatable' ;
+import { InstgridComponent } from './instgrid/instgrid.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatDialogModule} from '@angular/material/dialog';
+import {DataService} from './services/data.service'
+import {AddDialogComponent} from './dialogs/add/add.dialog.component'
+import {EditDialogComponent} from './dialogs/edit/edit.dialog.component'
+import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,11 +63,18 @@ import { FlxUiDatatableModule,FlxUiDataTable } from 'flx-ui-datatable' ;
     AddStudentComponent,
     AddSubjectComponent,
     AddBatchComponent,
+    InstgridComponent,
+    AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     AppRoutingModule,
+   
+    MatPaginatorModule,
+    MatDialogModule,
+    MatTableModule,
     MatProgressBarModule,
-    FlxUiDatatableModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -74,9 +90,16 @@ import { FlxUiDatatableModule,FlxUiDataTable } from 'flx-ui-datatable' ;
     FormsModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSortModule,
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},Auth0serviceService,FlxUiDataTable],
-  bootstrap: [AppComponent]
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},Auth0serviceService,DataService],
+  bootstrap: [AppComponent],
+  exports:[AddDialogComponent,
+    EditDialogComponent,
+    DeleteDialogComponent],
+    entryComponents:[AddDialogComponent,
+      EditDialogComponent,
+      DeleteDialogComponent]
 })
 export class AppModule {}

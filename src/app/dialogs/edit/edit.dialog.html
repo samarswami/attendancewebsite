@@ -1,0 +1,47 @@
+<div class="container">
+  <h3 mat-dialog-title>Institute ID: {{data.InstID}}</h3>
+
+  <form class="mat-dialog-content" (ngSubmit)="submit" #formControl="ngForm">
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="InstID" [(ngModel)]="data.InstID" name="InstID" required disabled>
+      </mat-form-field>
+    </div>
+
+    <!--Textarea for demo purposes-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="Inst Name" [(ngModel)]="data.instName" name="instName" required >
+      </mat-form-field>
+    </div>
+
+    <!--Contains mat-hint for characters count and has maxLengt set-->
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #inputstate class="form-control" placeholder="Inst Address" [(ngModel)]="data.instAddr" name="instAddr" maxlength="10" required >
+      </mat-form-field>
+    </div>
+
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput #input class="form-control" placeholder="SPOC Name" [(ngModel)]="data.spocName" name="spocName" required >
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput type="number" #input class="form-control" placeholder="SPOC Contact" [(ngModel)]="data.spocContact" name="spocContact" required >
+      </mat-form-field>
+    </div>
+    <div class="form">
+      <mat-form-field color="accent">
+        <input matInput type="number" #input class="form-control" placeholder="Institute Contact" [(ngModel)]="data.InstContact" name="InstContact" required >
+      </mat-form-field>
+    </div>
+
+    <div mat-dialog-actions>
+      <button mat-button [type]="submit" [disabled]="!formControl.valid" [mat-dialog-close]="1" (click)="stopEdit()">Save</button>
+      <button mat-button (click)="onNoClick()" tabindex="-1">Cancel</button>
+    </div>
+  </form>
+</div>

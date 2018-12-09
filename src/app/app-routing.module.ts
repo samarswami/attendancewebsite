@@ -12,10 +12,12 @@ import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
+import {InstgridComponent} from './instgrid/instgrid.component'
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
+  { path: 'instgrid', component: InstgridComponent },
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
