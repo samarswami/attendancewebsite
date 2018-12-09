@@ -35,6 +35,8 @@ import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
+import { Auth0serviceService } from "./auth0service.service";
+import { FlxUiDatatableModule,FlxUiDataTable } from 'flx-ui-datatable' ;
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,11 +53,12 @@ import { AddBatchComponent } from './add-batch/add-batch.component';
     AddLecturerComponent,
     AddStudentComponent,
     AddSubjectComponent,
-    AddBatchComponent
+    AddBatchComponent,
   ],
   imports: [
     AppRoutingModule,
     MatProgressBarModule,
+    FlxUiDatatableModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -73,7 +76,7 @@ import { AddBatchComponent } from './add-batch/add-batch.component';
     MatInputModule,
     MatSelectModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},Auth0serviceService,FlxUiDataTable],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

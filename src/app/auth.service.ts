@@ -12,8 +12,7 @@ export class AuthService {
     console.log("inside service");
     const headerDict = {
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      Accept: "application/json"
     };
 
     const requestOptions = {
@@ -29,8 +28,7 @@ export class AuthService {
     console.log("inside service");
     const headerDict = {
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      Accept: "application/json"
     };
 
     const requestOptions = {
@@ -54,8 +52,7 @@ export class AuthService {
     console.log("inside service");
     const headerDict = {
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      Accept: "application/json"
     };
 
     const requestOptions = {
@@ -70,8 +67,7 @@ export class AuthService {
     console.log("inside addInst");
     const headerDict = {
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      Accept: "application/json"
     };
 
     const requestOptions = {
@@ -97,8 +93,7 @@ export class AuthService {
     console.log("inside service");
     const headerDict = {
       "Content-Type": "application/json",
-      Accept: "application/json",
-      "Access-Control-Allow-Headers": "Content-Type"
+      Accept: "application/json"
     };
 
     const requestOptions = {

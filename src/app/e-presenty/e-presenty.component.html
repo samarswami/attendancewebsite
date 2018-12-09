@@ -19,13 +19,13 @@
         >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-        <span class="title" (click)="redirect('home')">ePresenty</span>
+      <span class="title" (click)="redirect('home')">ePresenty</span>
       <span class="example-fill-remaining-space"></span>
       <span *ngIf="!(isHandset$ | async)">
-          <button mat-button (click)="redirect('login')" *ngIf="!(isLoggedin)">Login</button>
+          <button mat-button (click)="login()" *ngIf="!isAuthenticated()">Login</button>
           <button mat-button (click)="redirect('about')">About Us</button>
           <button mat-button (click)="redirect('contact')">Contact</button>
-          <button mat-button (click)="redirect('logout')" *ngIf="(isLoggedin$ | async)">Logout</button>
+          <button mat-button (click)="logout()" *ngIf="isAuthenticated()">Logout</button>
 
       </span>
       <button mat-icon-button class="more-button" 
@@ -33,10 +33,10 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu" xPosition="before">
-          <button mat-menu-item (click)="redirect('login')" *ngIf="!(isLoggedin$ | async)">Login</button>
+          <button mat-menu-item (click)="login()" >Login</button>
           <button mat-menu-item (click)="redirect('about')">About Us</button>
           <button mat-menu-item (click)="redirect('contact')">Contact</button>
-          <button mat-menu-item (click)="redirect('logout')" *ngIf="(isLoggedin$ | async)">Logout</button>
+          <button mat-menu-item (click)="logout()" >Logout</button>
         </mat-menu>
     </mat-toolbar>
     <!-- Add Content Here -->

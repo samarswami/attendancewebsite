@@ -28,8 +28,11 @@ export class DashboardComponent {
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
+      
       let role=localStorage.getItem('role')
-      if(role== 'superadmin'){
+      console.log(role);
+      
+      // if(role== 'superadmin'){
       return [
         { title: "Add Institute", name: "addinst"},
         { title: "Add Branch Admin", name: "addbradmin", cols: 1, rows: 1 },
@@ -43,25 +46,26 @@ export class DashboardComponent {
         { title: "Report", cols: 1, rows: 1 },
         { title: "Add Batch", name: "addbatch", cols: 1, rows: 1 },
         { title: "Add Students", name: "addstudent", cols: 1, rows: 1 },
-        { title: "Common View Timetable", cols: 1, rows: 1 }
+        { title: "Common View Timetable", cols: 1, rows: 1 },
+
       ];
-    }
-    else if(role== 'admin'){
-      return [
-        { title: "Add Institute", name: "addinst"},
-        { title: "Card 2", cols: 1, rows: 1 },
-        { title: "Card 3", cols: 1, rows: 1 },
-        { title: "Card 4", cols: 1, rows: 1 }
-      ];
-    }
-    else if(role== 'lecturer'){
-      return [
-        { title: "Add Institute", name: "addinst"},
-        { title: "Card 2", cols: 1, rows: 1 },
-        { title: "Card 3", cols: 1, rows: 1 },
-        { title: "Card 4", cols: 1, rows: 1 }
-      ];
-    }
+    // }
+    // else if(role== 'admin'){
+    //   return [
+    //     { title: "Add Institute", name: "addinst"},
+    //     { title: "Card 2", cols: 1, rows: 1 },
+    //     { title: "Card 3", cols: 1, rows: 1 },
+    //     { title: "Card 4", cols: 1, rows: 1 }
+    //   ];
+    // }
+    // else if(role== 'lecturer'){
+    //   return [
+    //     { title: "Add Institute", name: "addinst"},
+    //     { title: "Card 2", cols: 1, rows: 1 },
+    //     { title: "Card 3", cols: 1, rows: 1 },
+    //     { title: "Card 4", cols: 1, rows: 1 }
+    //   ];
+    // }
   })
   );
   isHandset$: Observable<boolean> = this.breakpointObserver

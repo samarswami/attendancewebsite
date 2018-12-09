@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Auth0serviceService } from './auth0service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ePresenty';
+  constructor(public auth: Auth0serviceService) {
+    auth.handleAuthentication();
+  }
+  ngOnInit() {
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+      this.auth.renewSession();
+    }
+  }
 }

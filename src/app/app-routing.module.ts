@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard',  component: DashboardComponent },
   { path: 'addinst', component: AddInstComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'addbradmin', component: AddbradminComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { useHash: true, onSameUrlNavigation: 'reload' })
+    RouterModule.forRoot(routes,{useHash: true})
   ],
   exports: [
     RouterModule

@@ -9,9 +9,7 @@ import { Router } from '@angular/router';
 export class LogoutComponent implements OnInit {
 
   constructor(private router: Router) { 
-    localStorage.setItem('isLoggedIn', 'false');
-    localStorage.setItem('role', '');
-    this.router.navigate(['./home']);
+    
   }
 
   ngOnInit() {
