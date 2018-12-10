@@ -13,7 +13,7 @@ export class AppComponent {
   }
   ngOnInit() {
     if (localStorage.getItem('isLoggedIn') === 'true') {
-      this.auth.renewSession();
+     // this.auth.renewSession();
     }
   }
 }

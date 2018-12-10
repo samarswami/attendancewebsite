@@ -44,7 +44,11 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {DataService} from './services/data.service'
 import {AddDialogComponent} from './dialogs/add/add.dialog.component'
 import {EditDialogComponent} from './dialogs/edit/edit.dialog.component'
-import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
+import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
+import { BranchGridComponent } from './branch-grid/branch-grid.component';
+import { AddBranchDialogComponent } from './dialogs/branch/add-branch-dialog/add-branch-dialog.component';
+import { DeleteBranchDialogComponent } from './dialogs/branch/delete-branch-dialog/delete-branch-dialog.component';
+import { EditBranchDialogComponent } from './dialogs/branch/edit-branch-dialog/edit-branch-dialog.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +70,11 @@ import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
     InstgridComponent,
     AddDialogComponent,
     EditDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    BranchGridComponent,
+    AddBranchDialogComponent,
+    DeleteBranchDialogComponent,
+    EditBranchDialogComponent
   ],
   imports: [
     AppRoutingModule,

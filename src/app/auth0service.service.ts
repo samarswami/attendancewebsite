@@ -72,16 +72,16 @@ export class Auth0serviceService {
     this._idToken = authResult.idToken;
     this._expiresAt = expiresAt;
   }
-  public renewSession(): void {
-    this.auth0.checkSession({}, (err, authResult) => {
-      if (authResult && authResult.accessToken && authResult.idToken) {
-        this.setSession(authResult);
-      } else if (err) {
-        alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
-        this.logout();
-      }
-    });
-  }
+  // public renewSession(): void {
+  //   this.auth0.checkSession({}, (err, authResult) => {
+  //     if (authResult && authResult.accessToken && authResult.idToken) {
+  //       this.setSession(authResult);
+  //     } else if (err) {
+  //       alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
+  //       this.logout();
+  //     }
+  //   });
+  // }
   public isAuthenticated(): boolean {
     // Check whether the current time is past the
     // access token's expiry time

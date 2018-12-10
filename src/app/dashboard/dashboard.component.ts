@@ -47,7 +47,8 @@ export class DashboardComponent {
         { title: "Add Batch", name: "addbatch", cols: 1, rows: 1 },
         { title: "Add Students", name: "addstudent", cols: 1, rows: 1 },
         { title: "Common View Timetable", cols: 1, rows: 1 },
-        { title: "View Institute", name:"instgrid",cols: 1, rows: 1 }
+        { title: "View Institute", name:"instgrid",cols: 1, rows: 1 },
+        { title: "View Branches", name:"branchgrid",cols: 1, rows: 1 }
 
       ];
     // }
