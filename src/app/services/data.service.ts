@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Issue } from '../models/issue';
+import { Issue, dataGetInst } from '../models/issue';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { componentRefresh } from '@angular/core/src/render3/instructions';
 import { InstgridComponent } from '../instgrid/instgrid.component';
@@ -34,10 +34,10 @@ export class DataService {
 
   /** CRUD METHODS */
   getAllIssues(): void {
-    this.httpClient.get<Issue[]>(this.API_URL).subscribe(data => {
+    this.httpClient.get<dataGetInst>(this.API_URL).subscribe(data => {
       console.log(data);
 
-      this.dataChange.next(data);
+      this.dataChange.next(data.Items);
     },
       (error: HttpErrorResponse) => {
         console.log(error.name + ' ' + error.message);

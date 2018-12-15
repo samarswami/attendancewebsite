@@ -6,3 +6,9 @@ export class Issue {
   spocName: string;
   InstContact: number;
 }
+export class dataGetInst{
+  Items: Issue[];
+  Count: number;
+  ScannedCount: number;
+
+}
