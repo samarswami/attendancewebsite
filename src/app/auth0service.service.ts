@@ -14,7 +14,9 @@ export class Auth0serviceService {
     clientID: 'l24lByEFpvLtz1EKjwJkK2vxkKQrvtmE',
     domain: 'epresentyauth.auth0.com',
     responseType: 'token id_token',
+    //redirectUri: 'http://epresenty.com/#/dashboard',
     redirectUri: 'http://localhost:4200/#/dashboard',
+
     scope: 'openid email'
   });
 
@@ -37,7 +39,10 @@ export class Auth0serviceService {
   }
   public logout(): void {
     // Remove tokens and expiry time
+    //let options={"returnTo":"http://epresenty.com/#/logout"}
     let options={"returnTo":"http://localhost:4200/#/logout"}
+
+    
     this._accessToken = '';
     this._idToken = '';
     this._expiresAt = 0;

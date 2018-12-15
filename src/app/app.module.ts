@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
@@ -41,11 +43,12 @@ import { InstgridComponent } from './instgrid/instgrid.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FlatpickrModule } from 'angularx-flatpickr';
 import {DataService} from './services/data.service'
 import {AddDialogComponent} from './dialogs/add/add.dialog.component'
 import {EditDialogComponent} from './dialogs/edit/edit.dialog.component'
-import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
-
+import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
+import { TimetableComponent } from './timetable/timetable.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,11 +69,15 @@ import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
     InstgridComponent,
     AddDialogComponent,
     EditDialogComponent,
-    DeleteDialogComponent
+    DeleteDialogComponent,
+    TimetableComponent
   ],
   imports: [
     AppRoutingModule,
-   
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
     MatPaginatorModule,
     MatDialogModule,
     MatTableModule,
@@ -85,18 +92,22 @@ import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component'
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    FlatpickrModule,
     MatCardModule,
     MatMenuModule,
     FormsModule,
+    FlatpickrModule.forRoot(),
     MatProgressSpinnerModule,
     MatInputModule,
     MatSelectModule,
     MatSortModule,
   ],
+  
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},Auth0serviceService,DataService],
   bootstrap: [AppComponent],
   exports:[AddDialogComponent,
     EditDialogComponent,
+    TimetableComponent,
     DeleteDialogComponent],
     entryComponents:[AddDialogComponent,
       EditDialogComponent,

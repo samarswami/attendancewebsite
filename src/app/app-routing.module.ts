@@ -13,7 +13,7 @@ import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
 import {InstgridComponent} from './instgrid/instgrid.component'
-
+import {TimetableComponent} from './timetable/timetable.component'
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -29,6 +29,8 @@ const routes: Routes = [
   { path: 'addstudent', component: AddStudentComponent },
   { path: 'addsubject', component: AddSubjectComponent },
   { path: 'addbatch', component: AddBatchComponent },
+  { path: 'timetable', component: TimetableComponent },
+
 ];
 
 @NgModule({
