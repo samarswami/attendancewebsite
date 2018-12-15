@@ -14,7 +14,6 @@ import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
 import { InstgridComponent } from './instgrid/instgrid.component'
 import { BranchGridComponent } from './branch-grid/branch-grid.component';
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -31,7 +30,7 @@ const routes: Routes = [
   { path: 'addsubject', component: AddSubjectComponent },
   { path: 'addbatch', component: AddBatchComponent },
   { path: 'branchgrid', component: BranchGridComponent },
-
+  { path: 'timetable', component: TimetableComponent }
 ];
 
 @NgModule({

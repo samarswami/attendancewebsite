@@ -33,10 +33,10 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu" xPosition="before">
-          <button mat-menu-item (click)="login()" >Login</button>
+          <button mat-menu-item (click)="login()" *ngIf="!isAuthenticated()">Login</button>
           <button mat-menu-item (click)="redirect('about')">About Us</button>
           <button mat-menu-item (click)="redirect('contact')">Contact</button>
-          <button mat-menu-item (click)="logout()" >Logout</button>
+          <button mat-menu-item (click)="logout()" *ngIf="isAuthenticated()">Logout</button>
         </mat-menu>
     </mat-toolbar>
     <!-- Add Content Here -->

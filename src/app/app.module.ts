@@ -1,6 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
@@ -41,6 +43,7 @@ import { InstgridComponent } from './instgrid/instgrid.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FlatpickrModule } from 'angularx-flatpickr';
 import {DataService} from './services/data.service'
 import {AddDialogComponent} from './dialogs/add/add.dialog.component'
 import {EditDialogComponent} from './dialogs/edit/edit.dialog.component'
@@ -49,7 +52,7 @@ import { BranchGridComponent } from './branch-grid/branch-grid.component';
 import { AddBranchDialogComponent } from './dialogs/branch/add-branch-dialog/add-branch-dialog.component';
 import { DeleteBranchDialogComponent } from './dialogs/branch/delete-branch-dialog/delete-branch-dialog.component';
 import { EditBranchDialogComponent } from './dialogs/branch/edit-branch-dialog/edit-branch-dialog.component';
-
+import { TimetableComponent } from './timetable/timetable.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -74,11 +77,16 @@ import { EditBranchDialogComponent } from './dialogs/branch/edit-branch-dialog/e
     BranchGridComponent,
     AddBranchDialogComponent,
     DeleteBranchDialogComponent,
-    EditBranchDialogComponent
+    EditBranchDialogComponent,
+    TimetableComponent
+
   ],
   imports: [
     AppRoutingModule,
-   
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    }),
     MatPaginatorModule,
     MatDialogModule,
     MatTableModule,
@@ -93,18 +101,22 @@ import { EditBranchDialogComponent } from './dialogs/branch/edit-branch-dialog/e
     MatIconModule,
     MatListModule,
     MatGridListModule,
+    FlatpickrModule,
     MatCardModule,
     MatMenuModule,
     FormsModule,
+    FlatpickrModule.forRoot(),
     MatProgressSpinnerModule,
     MatInputModule,
     MatSelectModule,
     MatSortModule,
   ],
+  
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},Auth0serviceService,DataService],
   bootstrap: [AppComponent],
   exports:[AddDialogComponent,
     EditDialogComponent,
+    TimetableComponent,
     DeleteDialogComponent],
     entryComponents:[AddDialogComponent,
       EditDialogComponent,
