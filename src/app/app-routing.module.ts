@@ -14,6 +14,7 @@ import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
 import { InstgridComponent } from './instgrid/instgrid.component'
 import { BranchGridComponent } from './branch-grid/branch-grid.component';
+import { TimetableComponent } from './timetable/timetable.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
