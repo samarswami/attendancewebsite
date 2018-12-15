@@ -12,8 +12,8 @@ import { AddLecturerComponent } from './add-lecturer/add-lecturer.component';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { AddSubjectComponent } from './add-subject/add-subject.component';
 import { AddBatchComponent } from './add-batch/add-batch.component';
-import {InstgridComponent} from './instgrid/instgrid.component'
-import {TimetableComponent} from './timetable/timetable.component'
+import { InstgridComponent } from './instgrid/instgrid.component'
+import { BranchGridComponent } from './branch-grid/branch-grid.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'dashboard',  component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'addinst', component: AddInstComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'addbradmin', component: AddbradminComponent },
@@ -29,13 +29,13 @@ const routes: Routes = [
   { path: 'addstudent', component: AddStudentComponent },
   { path: 'addsubject', component: AddSubjectComponent },
   { path: 'addbatch', component: AddBatchComponent },
-  { path: 'timetable', component: TimetableComponent },
-
+  { path: 'branchgrid', component: BranchGridComponent },
+  { path: 'timetable', component: TimetableComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes,{useHash: true})
+    RouterModule.forRoot(routes, { useHash: true })
   ],
   exports: [
     RouterModule

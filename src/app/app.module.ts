@@ -48,6 +48,10 @@ import {DataService} from './services/data.service'
 import {AddDialogComponent} from './dialogs/add/add.dialog.component'
 import {EditDialogComponent} from './dialogs/edit/edit.dialog.component'
 import {DeleteDialogComponent} from './dialogs/delete/delete.dialog.component';
+import { BranchGridComponent } from './branch-grid/branch-grid.component';
+import { AddBranchDialogComponent } from './dialogs/branch/add-branch-dialog/add-branch-dialog.component';
+import { DeleteBranchDialogComponent } from './dialogs/branch/delete-branch-dialog/delete-branch-dialog.component';
+import { EditBranchDialogComponent } from './dialogs/branch/edit-branch-dialog/edit-branch-dialog.component';
 import { TimetableComponent } from './timetable/timetable.component';
 @NgModule({
   declarations: [
@@ -70,7 +74,12 @@ import { TimetableComponent } from './timetable/timetable.component';
     AddDialogComponent,
     EditDialogComponent,
     DeleteDialogComponent,
+    BranchGridComponent,
+    AddBranchDialogComponent,
+    DeleteBranchDialogComponent,
+    EditBranchDialogComponent,
     TimetableComponent
+
   ],
   imports: [
     AppRoutingModule,
